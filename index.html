@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Forecast</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
@@ -17,12 +17,22 @@
                 <input type="text" id="location" name="location" placeholder="City or address" required>
                 <button type="submit">Get Weather</button>
             </form>
-            <div id="weather-output"></div>
+            <div id="weather-output">
+                <h2>Weather Details</h2>
+                <p id="location-name"></p>
+                <div id="current-weather">
+                    <!-- Current weather details -->
+                </div>
+                <div id="forecast">
+                    <!-- Daily forecast details -->
+                </div>
+            </div>
         </main>
         <footer>
             <p>&copy; 2024 Visual Forecast. All rights reserved.</p>
         </footer>
     </div>
+    
     <script type="module" src="main.js"></script>
 </body>
 </html>

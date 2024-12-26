@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3f4f6;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #1e3a8a;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main Content */
+main {
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3b82f6;
+}
+
+/* Weather Output */
+#weather-output {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #e5e7eb;
+    border-radius: 8px;
+    display: none; /* Initially hidden */
+}
+
+#weather-output h2 {
+    margin: 0 0 1rem;
+}
+
+#current-weather, #forecast {
+    margin-top: 1rem;
+}
+
+.weather-card {
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,7 +1,7 @@
 // main.js
 import { fetchWeatherData } from './fetchWeather.js';
 import { processWeatherData } from './processWeather.js';
-import { clearInput, displayError, logWeatherData } from './domHandler.js';
+import { clearInput, displayError, updateWeatherUI } from './domHandler.js';
 
 // Select the form and input
 const locationForm = document.getElementById('location-form');
@@ -20,7 +20,7 @@ locationForm.addEventListener('submit', async (event) => {
     try {
         const rawWeatherData = await fetchWeatherData(location);
         const processedData = processWeatherData(rawWeatherData);
-        logWeatherData(processedData);
+        updateWeatherUI(processedData);
     } catch (error) {
         displayError('Unable to fetch and process weather data');
     }
