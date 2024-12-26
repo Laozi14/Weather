@@ -22,11 +22,40 @@ async function fetchWeatherData(location) {
         // Parse the response as JSON
         const data = await response.json();
         
-        // Log the data to the console
-        console.log(data);
+        // Process the data
+        const processedData = processWeatherData(data);
+        
+        // Log the processed data
+        console.log(processedData);
+        
+        // Return the processed data
+        return processedData;
     } catch (error) {
         console.error('Failed to fetch weather data:', error);
     }
+}
+
+// Function to process the weather data and return required fields
+function processWeatherData(data) {
+    return {
+        location: data.address,
+        timezone: data.timezone,
+        current: {
+            date: data.currentConditions.datetime,
+            temperature: data.currentConditions.temp,
+            conditions: data.currentConditions.conditions,
+            windSpeed: data.currentConditions.windspeed,
+            humidity: data.currentConditions.humidity,
+            icon: data.currentConditions.icon // Weather icon code
+        },
+        daily: data.days.map(day => ({
+            date: day.datetime,
+            temperatureMax: day.tempmax,
+            temperatureMin: day.tempmin,
+            conditions: day.conditions,
+            icon: day.icon
+        }))
+    };
 }
 
 // Test the function with a sample location
